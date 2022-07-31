@@ -3,7 +3,7 @@
 ## Installation
 
 If you are using Maven just add the following dependency to your pom.xml:
-```java
+```xml
 <dependency>
 	<groupId>io.github.sogdata</groupId>
 	<artifactId>mybatis-plus-spring-boot-starter</artifactId>

@@ -18,21 +18,37 @@ import com.github.sogdata.model.AccountAttribute;
 import com.github.sogdata.model.PageAttribute;
 import com.github.sogdata.model.PageCombinedSerializer;
 
+/**
+ * Mybatis plus configuration 
+ *
+ */
 @Configuration
 public class MybatisPlusConfig {
 
+	/**
+	 * Page attribute bean
+	 * @return page attibute
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	PageAttribute pageAttribute() {
 		return new PageAttribute();
 	}
 
+	/**
+	 * Account attribute bean
+	 * @return account attribute
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	AccountAttribute accountAttribute() {
 		return new AccountAttribute();
 	}
 
+	/**
+	 * Auditing interceptor bean
+	 * @return auditing interceptor
+	 */
 	@Bean
 	@Primary
 	@ConditionalOnBean(value = PageAttribute.class)
@@ -41,6 +57,11 @@ public class MybatisPlusConfig {
 		return new AuditingInterceptor();
 	}
 
+	/**
+	 * PageCombined serializer bean
+	 * @param <T>
+	 * @return	pageCombined serializer
+	 */
 	@Bean
 	@ConditionalOnBean(value = PageAttribute.class)
 	@ConditionalOnMissingBean
@@ -51,6 +72,10 @@ public class MybatisPlusConfig {
 	@Autowired
 	private ApplicationContext context;
 
+	/**
+	 * Add page interceptor
+	 * @return WebMvcConfigurer
+	 */
 	@Bean
 	@ConditionalOnBean(value = PageAttribute.class)
 	WebMvcConfigurer paginationRequestDefault() {

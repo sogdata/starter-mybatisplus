@@ -3,10 +3,27 @@ package com.github.sogdata.enumeration;
 import java.util.Locale;
 import java.util.Optional;
 
+/**
+ * Direction
+ *
+ */
 public enum Direction {
 
-	ASC, DESC;
+	/**
+	 * Order by asc
+	 */
+	ASC,
 
+	/**
+	 * Order by desc
+	 */
+	DESC;
+
+	/**
+	 * Returns whether the direction is ascending.
+	 * 
+	 * @return boolean
+	 */
 	public boolean isAscending() {
 		return this.equals(ASC);
 	}
@@ -14,7 +31,7 @@ public enum Direction {
 	/**
 	 * Returns whether the direction is descending.
 	 *
-	 * @return
+	 * @return boolean
 	 * @since 1.13
 	 */
 	public boolean isDescending() {
@@ -24,10 +41,10 @@ public enum Direction {
 	/**
 	 * Returns the {@link Direction} enum for the given {@link String} value.
 	 *
-	 * @param value
+	 * @param value value
 	 * @throws IllegalArgumentException in case the given value cannot be parsed
 	 *                                  into an enum value.
-	 * @return
+	 * @return Direction
 	 */
 	public static Direction fromString(String value) {
 
@@ -44,8 +61,8 @@ public enum Direction {
 	 * Returns the {@link Direction} enum for the given {@link String} or null if it
 	 * cannot be parsed into an enum value.
 	 *
-	 * @param value
-	 * @return
+	 * @param value value
+	 * @return Direction
 	 */
 	public static Optional<Direction> fromOptionalString(String value) {
 

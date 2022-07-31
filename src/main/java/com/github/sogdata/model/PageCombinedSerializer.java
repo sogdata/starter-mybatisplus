@@ -10,6 +10,11 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
+/**
+ * Page combined serializer
+ *
+ * @param <T> class
+ */
 @JsonComponent
 public class PageCombinedSerializer<T> extends JsonSerializer<IPage<T>> {
 

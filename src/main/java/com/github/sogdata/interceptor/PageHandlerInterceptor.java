@@ -29,16 +29,28 @@ import com.github.sogdata.enumeration.Direction;
 import com.github.sogdata.model.PageAttribute;
 import com.github.sogdata.util.TableUtils;
 
+/**
+ * Page interceptor
+ *
+ * @param <T> class
+ */
 public class PageHandlerInterceptor<T> implements HandlerMethodArgumentResolver {
 
 	private PageAttribute pageAttribute;
-
+	
 	private ApplicationContext context;
 
+	/**
+	 * Constructor method
+	 */
 	public PageHandlerInterceptor() {
 		this.pageAttribute = new PageAttribute();
 	}
 
+	/**
+	 * Constructor method
+	 * @param context spring application context
+	 */
 	public PageHandlerInterceptor(ApplicationContext context) {
 		this.context = context;
 	}

@@ -8,31 +8,39 @@ import java.lang.annotation.Target;
 
 import com.github.sogdata.enumeration.Direction;
 
+/**
+ * Default pageable attribute
+ *
+ */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PARAMETER)
 public @interface PageableDefault {
 
 	/**
-	 * Alias for {@link #size()}. Prefer to use the {@link #size()} method as it
+	 * Alias for size. Prefer to use the size method as it
 	 * makes the annotation declaration more expressive and you'll probably want to
-	 * configure the {@link #page()} anyway.
+	 * configure the page anyway.
 	 *
-	 * @return
+	 * @return value
 	 */
 	int value() default 10;
 
 	/**
 	 * The default-size the injected
-	 * {@link org.springframework.data.domain.Pageable} should get if no
+	 * pageable should get if no
 	 * corresponding parameter defined in request (default is 10).
+	 * 
+	 * @return size
 	 */
 	int size() default 10;
 
 	/**
 	 * The default-pagenumber the injected
-	 * {@link org.springframework.data.domain.Pageable} should get if no
+	 * pageable should get if no
 	 * corresponding parameter defined in request (default is 0).
+	 * 
+	 * @return page
 	 */
 	int page() default 0;
 
@@ -40,14 +48,14 @@ public @interface PageableDefault {
 	 * The properties to sort by by default. If unset, no sorting will be applied at
 	 * all.
 	 *
-	 * @return
+	 * @return sorts
 	 */
 	String[] sort() default {};
 
 	/**
-	 * The direction to sort by. Defaults to {@link Direction#ASC}.
+	 * The direction to sort by. Defaults to asc.
 	 *
-	 * @return
+	 * @return Direction
 	 */
 	Direction direction() default Direction.ASC;
 }

@@ -1,5 +1,27 @@
 package com.github.sogdata.enumeration;
 
+/**
+ * Creator
+ *
+ */
 public enum Creator {
-	ID, NAME, CODE, NICKNAME;
+	/**
+	 * Id
+	 */
+	ID,
+
+	/**
+	 * Name
+	 */
+	NAME,
+
+	/**
+	 * Code
+	 */
+	CODE,
+
+	/**
+	 * Nickname
+	 */
+	NICKNAME;
 }

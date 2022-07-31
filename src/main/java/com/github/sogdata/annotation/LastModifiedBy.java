@@ -10,8 +10,17 @@ import java.lang.annotation.Target;
 
 import com.github.sogdata.enumeration.Creator;
 
+/**
+ * Last modified by
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = { FIELD, METHOD, ANNOTATION_TYPE })
 public @interface LastModifiedBy {
+	
+	/**
+	 * Creator attribute
+	 * @return Creator enumeration
+	 */
 	Creator value() default Creator.ID;
 }

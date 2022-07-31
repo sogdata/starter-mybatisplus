@@ -7,11 +7,15 @@ import org.springframework.core.type.AnnotationMetadata;
 import com.github.sogdata.MybatisPlusConfig;
 import com.github.sogdata.annotation.EnableMybatisPlus;
 
+/**
+ * PageImportSelector
+ *
+ */
 public class PageImportSelector implements ImportSelector {
 
 	/**
 	 * Select and return the names of which class(es) should be imported based on
-	 * the {@link AnnotationMetadata} of the importing @{@link Configuration} class.
+	 * the AnnotationMetadata of the importing Configuration class.
 	 *
 	 * @param importingClassMetadata
 	 * @return the class names, or an empty array if none

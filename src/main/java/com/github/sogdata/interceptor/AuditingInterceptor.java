@@ -28,6 +28,10 @@ import com.github.sogdata.annotation.LastModifiedDate;
 import com.github.sogdata.enumeration.Creator;
 import com.github.sogdata.model.AccountAttribute;
 
+/**
+ * Auditing interceptor
+ *
+ */
 @Intercepts({ @Signature(type = Executor.class, method = "update", args = { MappedStatement.class, Object.class }) })
 public class AuditingInterceptor implements Interceptor {
 
