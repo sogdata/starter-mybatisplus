@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# Getting started  
 
-You can use the [editor on GitHub](https://github.com/sogdata/starter-mybatisplus/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Installation
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+If you are using Maven just add the following dependency to your pom.xml:
+```xml
+<dependency>
+	<groupId>io.github.sogdata</groupId>
+	<artifactId>mybatis-plus-spring-boot-starter</artifactId>
+	<version>x.x.x</version>
+</dependency>
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Configuration
 
-### Jekyll Themes
+page attribute (@PageDefault, IPage<?>)
+```java
+@Bean()
+PageAttribute pageAttribute() {
+	return new PageAttribute.Builder().page("page").size("size").content("content").build();
+}
+```  
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sogdata/starter-mybatisplus/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+account attribute (@CreatedBy,@LastModifiedBy)
+```java
+@Bean
+AccountAttribute accountAttribute() {
+	Map<Creator, Object> map = new HashMap<>();
+	map.put(Creator.ID, getId());
+	map.put(Creator.NAME, getName());
+	return new AccountAttribute.Builder().attributes(map).build();
+}
+```
