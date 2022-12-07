@@ -1,4 +1,11 @@
 # Getting started  
+A Spring Boot starter, enhanced [Mybatis Plus](https://github.com/baomidou/mybatis-plus) which looks like Spring Data JPA. 
+Feature: 
++ @CreatedBy
++ @CreatedDate
++ @LastModifuedBy
++ @LastModifiedDate
++ @PageableDefault  
 
 ## Installation
 
